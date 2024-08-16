@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta lang="tr">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="CS2 Level Hesaplama">
+    <meta name="description" content="CS2 Kaç Oyunda Level Atlarım">
+    <meta name="keywords" content="cs2, xp hesaplama, cs2 level hesaplama, cs2 drop">
+    <title>CS2 Level Hesaplama</title>
+    <link rel="icon" href="img/favicon.ico" type="img/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img class="logo__resim" src="/img/favicon.ico" alt="Logo">
+            <p class="navbar-title">CS2 <br> Calculator </p>
+        </div>
+        <div class="nav-links">
+            <a href="#">
+                <i class="fa-solid fa-question"></i>Nasıl Çalışır
+            </a>
+            <a href="#">
+                <i class="fa-brands fa-discord"></i>Discord Botu
+            </a>
+            <a href="/index-en.html">
+                <i class="fa-solid fa-language"></i>English
+            </a>
+        </div>
+    </nav>
+    
+    <section>
+        <div class="container">
+            <div class="input-group">
+                <p>Mevcut Tecrübe Puanınız</p>
+                <input type="range" id="experiencePoints" min="1" max="4999" value="2500" required
+                    oninput="updateSliderColorAndValue(this.value)">
+                <input type="text" id="experienceInput" placeholder="Tecrübe Puanı Girin..."
+                    oninput="updateSliderFromInput(this)">
+            </div>
+            <h2>Oyun Modu Seçimi</h2>
+            <div class="button-group">
+                <label class="selectable-label" for="mode1">
+                    <input type="radio" checked id="mode1" name="gameMode" value="deathmatch">
+                    <span class="selectable-button">Ölüm Maçı/Silah Yarışı</span>
+                </label>
+                <label class="selectable-label" for="mode2">
+                    <input type="radio" id="mode2" name="gameMode" value="casual">
+                    <span class="selectable-button">Basit Eğlence</span>
+                </label>
+                <label class="selectable-label" for="mode3">
+                    <input type="radio" id="mode3" name="gameMode" value="competitive">
+                    <span class="selectable-button">Rekabetçi/Seçkin</span>
+                </label>
+                <label class="selectable-label" for="mode4">
+                    <input type="radio" id="mode4" name="gameMode" value="wingman">
+                    <span class="selectable-button">Yoldaş</span>
+                </label>
+            </div>
+            <h2>Tecrübe Puanı Boostu</h2>
+            <div class="button-group button-gap button-group-boost">
+                <label class="selectable-label-boost" for="boost1x">
+                    <input type="radio" id="boost1x" name="boost" value="1x">
+                    <span class="selectable-button">1x</span>
+                </label>
+                <label class="selectable-label-boost" for="boost1x1x">
+                    <input type="radio" id="boost1x1x" name="boost" value="1x+1x">
+                    <span class="selectable-button">2x</span>
+                </label>
+                <label class="selectable-label-boost" for="boost1x3x">
+                    <input type="radio" id="boost1x3x" name="boost" value="1x+3x" checked>
+                    <span class="selectable-button">4x</span>
+                </label>
+            </div>
+            <button id="calculateButton" onclick="calculateLevel();">Hesapla</button>
+            <p id="result">
+                <span id="levelResult"></span>
+            </p>
+        </div>
+    </section>
+    </main>
+    <footer>
+        <p class="footer-text">&copy; <span id="currentYear"></span> | <a href="">sbt</a>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

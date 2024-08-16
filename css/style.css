@@ -1,0 +1,354 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body,
+section {
+    background: url('../img/bg3.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Lato', sans-serif;
+    color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    min-width: 467;
+}
+
+h1 {
+    font-size: 28px;
+    padding: 0 1px;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 3px 5px 6px black;
+}
+
+.container {
+    background-color: #222831;
+    width: 50%;
+    padding: 35px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px 6px rgba(0, 0, 0, 0.5);
+    opacity: 0.9;
+}
+
+h2 {
+    font-size: 24px;
+    text-align: center;
+    text-shadow: 3px 5px 6px black;
+    margin: 15px 0;
+}
+
+.input-group {
+    width: 80%;
+    max-width: 300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    border-radius: 3px;
+    margin: 10px 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border: 2px solid #f89e19;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    margin-top: 15px;
+    width: 100%;
+    height: 25px;
+    background: linear-gradient(to right, #f89e19 50%, white 50%, white 100%);
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 25px;
+    background: #262e70;
+    cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+    visibility: hidden;
+}
+
+.button-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 5px;
+}
+
+@media screen and (min-width: 828px) {
+    .button-group {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 828px) {
+    .container {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 590px) {
+    body {
+        height: 150vh;
+    }
+
+    .container {
+        background-color: #222831;
+        width: 90%;
+        margin-top: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid transparent;
+        border-radius: 10px;
+        box-shadow: 0px 0px 15px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar-title {
+        display: none;
+    }
+}
+
+.button-group-boost {
+    display: flex;
+}
+
+.selectable-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    min-height: 40px;
+    width: 100%;
+    text-align: center;
+}
+
+.selectable-button {
+    padding: 10px;
+    width: 100%;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.selectable-button:hover {
+    background-color: #f89e19;
+    border-color: #f89e19;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.selectable-label input[type="radio"]:checked+.selectable-button {
+    background-color: #262e70;
+    border-color: #f89e19;
+}
+
+.selectable-label-boost {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+}
+
+.selectable-label-boost input[type="radio"]:checked+.selectable-button {
+    background-color: #262e70;
+    border-color: #f89e19;
+}
+
+.button-gap {
+    gap: 5px;
+}
+
+.dynamic-content {
+    color: #f89e19;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#calculateButton {
+    display: inline-block;
+    background-color: #262e70;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 25px;
+    width: 70%;
+    max-width: 300px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #262e70;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+#calculateButton:hover {
+    background-color: #f89e19;
+}
+
+#result {
+    font-size: 16px;
+    color: white;
+    margin-top: 35px;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+}
+
+#experienceInput::placeholder {
+    color: white;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #222831;
+    position: fixed;
+    top: 0;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-title {
+    color: white;
+    font-size: 20px;
+    cursor: default;
+}
+
+.logo__resim {
+    width: 40px;
+    margin-right: 10px;
+    border: 2px solid #f89e19;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    min-width: 70px;
+    white-space: nowrap;
+}
+
+.nav-links a i {
+    margin-right: 8px;
+    font-size: 18px;
+    margin-top: 6px;
+}
+
+.nav-links a:hover {
+    color: #f89e19;
+}
+
+@media (max-width: 600px) {
+    .nav-links {
+        gap: 20px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .nav-links a i {
+        margin-right: 6px;
+        font-size: 16px;
+    }
+}
+
+
+
+footer {
+    display: flex;
+    background-color: #222831;
+    color: white;
+    padding: 10px 0;
+    width: 100%;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
+    margin-top: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-text,
+.footer-text a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.5;
+}
+
+.nav-links i {
+    margin-bottom: 5px;
+}
+
+.navbar-title {
+    font-weight: 600;
+    cursor: pointer;
+}
